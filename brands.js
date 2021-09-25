@@ -1,38 +1,7 @@
 
-
-// size charts
-
-// public reviews
-
-// historical user reviews (our platform)
-
-// apis
-
-// monetization 
-
-// contact 
-
-// techinical access
-
-// analytics 
-
-// scrape ease
-
-// inventory 
-
-// logistics
-
-// audiences 
-
-// history 
-
-// back end platforms
-
 // ----------------------------------------------------- STORE PROVIDED INFORMATION ---------------------------------------------------
-// complete as much as possible
-// Retailers should ideally share this information
 
-
+// online index of a store/brand
 const OnlineBrandIndex = {
     // name of the brand
     BrandName,
@@ -44,14 +13,20 @@ const OnlineBrandIndex = {
     SampleBrandScreenshot,
 }
 
+//in store 
 const InStoreBrandIndex = {
     BrandName,
-    // outside store 
-    StoreFrontPicture,
-    // inside store
-    StoreFloorPicture,
     // store physical address
-    StoreLocation,
+    StoreLocations: [
+        {
+        // outside store 
+        StoreFrontPicture,
+        // inside store
+        StoreFloorPicture,
+        // location
+        Address,
+        },
+    ],
 }
 
 // social media presence of the brand
@@ -128,20 +103,25 @@ const BrandAudience = {
     BrandName,
     Countries,
     PriceRange,
-    Samples: {
-        Category,
-        CategoryURL,
-        SampleItems,
-        InventoryPageVolume,
-        Style,
-    }
+    Style,
+    ClothingCategories,
+    Aesthetics,
+    Age,
+}
+
+// Uploaded SizingSpecs
+const BrandSizeCharts = {
+    BrandName,
+    ClothingCategories,
+    ClothingLine,
+    SpecialSizes,
+    ChartImage,
+    ChartLink,
 }
 
 // break down of store size offerings
 const StoreBrandSize = {
-    BrandName,
-    ClothingCategories,
-    SpecialSizes,
+    BrandSizeCharts,
     SizeName,
     Min,
     Max,
@@ -152,4 +132,163 @@ const StoreBrandSize = {
         UserProfiles,
     ]
 }
-  
+
+// Owner verifications
+const Owner = {
+    DomainEmail,
+    Domain,
+    Cell,
+    Billing,
+    Subscription,
+    // Id's for the following
+    // StoreIndex,
+    // BrandIndex,
+    // BrandSocial,
+}
+
+// worker on the owner side
+const Employee = { 
+    Name,
+    // website, manufacturing, designing, marketing, affiliate, social media
+    Role,
+    Permissions: [],
+}
+
+
+// ----------------------------------------------------- STORE DYNAMIC INFORMATION ---------------------------------------------------
+
+// inventory
+const BrandInventory = {
+    BrandIndex,
+    Schedules: {
+        SiteChange,
+        SitePathsChange,
+        SiteInventoryChange,
+        ClothingSizesChange,
+        ManufacturerChange,
+    },
+    InventoryOptions: [{
+        CategoryGiven, // defined by the store
+        Category, // defined by us
+        CategoryURL, // link to teh category
+        Items, // array that represent the [page]
+        InventoryPageVolume, // how many items on page
+        ItemsMissed, // images per item x images per page x cards per page 
+    },]
+}
+
+// Site Path Simplified breakdown
+const SimpleSitePaths = {
+    MainImage: [{
+        ImageClass,
+        ImagePath,
+    }],
+    Card: [{
+        CardClass,
+        CardPath,
+    }],
+    // Paths for getting a product card creation
+    NormalizedCard: {
+        Title,
+        Price,
+        PreviousPrice,
+        PrimaryImage,
+        SecondaryImages: [Url,],
+        Colors,
+        Details, // additional text found and not described above
+    }
+
+}
+
+// Card to present to users
+const ProductCard = {
+    Title,
+    Price,
+    PreviousPrice,
+    PrimaryImage,
+    SecondaryImages: [Url,],
+    Colors,
+    Details,
+    ProductLink,
+    MonetizedLink,
+    MetaData, // received from url of product
+    AvaiableMeasurements: {
+        BodyPart,
+        Min,
+        Max
+    },
+}
+
+// Card enrichment information for search and fit matching
+const ProductEnrichments = {
+    Category, // PREDICTED OR MANUAL
+    Style, // Predicted or Manual
+    SizesAvailable, // Manual or Scraped or Predicted 
+    Fit: [{
+        BodyPart, // computer vision or manual
+        IntendedFit, // based on garment
+    }],
+    Coverage: [{
+        BodyPart,
+        Coverage,
+    }],
+    Attributes: [{
+        SpecialAttribute, //cold shoulder, v-neck, embroidery
+    },]
+}
+
+const InventoryAccess = {
+    ResourceGetter, // Scraper, ThirdParty, Brand
+    Files, // Images, CSV, Json, JS Objects
+    Variables,// 
+}
+
+ // ------------------------------------------------------------- REVIEWS & RATINGS -----------------------------------------------------
+
+ const BrandConfidence = {
+    Sizing,
+    ClothingDescriptions,
+    CategoryClassification,
+    Logistics,
+    ImageRepresentation, // reality vs expectations
+    GarmentQuality,
+ }
+
+ // ideally proof of purchase or try on is needed for reviews
+ const ProductRatings = {
+    Url,
+    ProductID,
+    ProductCard,
+    Reviewer: {
+        UserProfile,
+        SearchMade,
+        Rating,
+        Pictures,
+        ReturnStatus,
+        DateMade,
+        DateFound,
+        DateBought,
+        GivenRating,
+        Concerns,
+        Feedback,
+    },
+    GlobalAverageRating,
+ }
+
+ // ------------------------------------------------------------- Monetization -----------------------------------------------------
+
+ const BrandMonetization = {
+     Billing,
+     Affiliation: [
+         {
+             Platform,
+             Commission,
+             Click,
+             Lead,
+             CookiePeriod,
+             Policy,
+             Contract,
+             PayPeriod,
+         },
+     ]
+ }
