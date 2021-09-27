@@ -1,4 +1,3 @@
-
 // ----------------------------------------------------- STORE PROVIDED INFORMATION ---------------------------------------------------
 
 // online index of a store/brand
@@ -292,3 +291,61 @@ const InventoryAccess = {
          },
      ]
  }
+
+ // ----------------------------------------------------------- STORE/BRAND PRODILE CREATION
+
+ // Functions a retailer, or credible person  can complete to create a store profile
+StoreProfileFunctions = {
+    StoreIndex: () => {
+      // domain
+      // brand logo
+      // url
+      // brandname
+      // made by
+      // last updated by
+      // get meta data
+      // save image preview of site
+      // try to access site logo through meta
+    },
+    BrandIndex: () => {
+      // landing page metadata 
+      // country
+      // specified domain
+      // sample inventory page
+      // sample product page
+      // link to shipping details
+      // link to returns details
+      // link to sizing detail
+      // currency
+      // made by
+      // last updated by
+    },
+    BrandLogistics: () => {
+      // shipping
+      // returns
+    },
+    SizeChartIndex: () => {
+      // size chart image
+      // brand indexed
+      // special size name
+      // sexe
+      // product categories
+      // true to size boolean
+      // manufacture name
+      // last updated date
+      // clothing line
+      // designer
+      // body type intended
+      // measurement unit
+      // made by
+      // last updated by
+    },
+    SizingIndex: () => {
+      // sizename 
+      // body part
+      // min
+      // max
+      // made by
+      // last updated by
+    },
+}

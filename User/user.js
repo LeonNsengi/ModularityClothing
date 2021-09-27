@@ -1,141 +1,159 @@
 // ----------------------------------------------------- USER PROFILE DATA ---------------------------------------------------
 
 // clothing targeted gender
-  const Sexe = {
-    Womens,
-    Mens,
-    Unisex,
-  }
-  // fast track comparisons with shape names
-  const BodyShapes = {
-    Triangle,
-    Rectangle,
-    InvertedTriangle,
-    Oval,
-    Hourglass,
-  }
-  
-  // compare shoulders to hips to set upper and lower geometric lines
-  // use BodyShapeCalculator with calculateShape function
-  const BodyshapeCalculator = {
-    ShoulderHips: null,
-    WaistHips: null,
-    BustWaist: null,
-    BustHips: null,
-    Shape: null,
-  
-  }
-  
-  // adjust measurements if the person has smaller curves than regression fit
-  // use language that is sensitive and respectful small.. curvy...
-  const Curves = {
-    Bust,
-    Butt,
-  }
-  
-  // how often to send notifications and billing
-  const Notifications = {
-    Subscription: {
-      Subscribed,
-      SubscriptionFrequency,
-      SubscriptionType,
-    },
-    Payments: {
-      StripeKey,
-      StripeID,
-    },
-    Contact: {
-      Email,
-      text,
-      socialmedia: [{
-        handle,
-        platform,
-      }]
-    },
-  }
-  
-  // band size and cup size to adjust bust prediction or recommend bra type clothing categories
-  const BraSize = {
-    BandSize,
-    BustSize
-  }
-  
-  // Body Data
-  const Body = {
-    Height,
-    HeightUnit,
-    Weight,
-    WeightUnit,
-    Bust, // around biggest part of bust
-    Waist, // biggest part of stomach
-    Hips, // biggest part around hips
-    Inseam, // from crotch to ankle
-    MeasurementUnit,
-  }
-  
-  // Personal Data
-  const UserMeta = {
-    // age range or age
-    Age,
-    // muscle definition, skin tightness,
-    ActivityLevel,
-    // country, province, state, city ()
-    Region,
-    // annual income or based on job
-    Income,
-    // non hispanic, hispanic, non arab, arab, [ east, west, north --> african, asian, european ]
-    Ethnicity,
-    // months pre and post pregnancy 
-    Maternity,
-    RelationshipStatus,
-    // level of schooling
-    Schooling,
-    // Student, Office, Labour, ...
-    Job,
-    //anorexic, skinny, thin, healthy, little overweight, overweight, fat, obese
-    WeightDescription,
-  
-  }
-  
-  // Sizes a user has bought from brands we have data for
-  const UserBrandSizes = {
-    // brand we already found. must have a unique country and link
-    BrandID,
-    // store where brand can be shopped. store can have multiple brands
-    StoreID,
-    BrandName,
-    // upper body, lower body, full
-    Coverage,
-    // item types
-    ClothingCategory,
-    // Special Size, 
-    SpecialSizes,
-    // Last Purchased
-    PurchaseDate,
-    // Country
-    Country,
-    SizeName,
-    SizeID,
-  }
-  
-  // Sizes a user has bought from brands we have not indexed
-  const UserUnknownSizes = {
-    BrandLink,
-    BrandName,
-    ClothingCategory,
-    PurchaseDate,
-    Country,
-    Coverage,
-    SizeName,
-    SizeID,
-  }
-  
-  // Liked Brands
-  const PreferredBrands = {
-    BrandName,
-    BrandID,
-    StoreID,
-  }
+const Sexe = {
+  Womens,
+  Mens,
+  Unisex,
+}
+// fast track comparisons with shape names
+const BodyShapes = {
+  Triangle,
+  Rectangle,
+  InvertedTriangle,
+  Oval,
+  Hourglass,
+}
+
+// compare shoulders to hips to set upper and lower geometric lines
+// use BodyShapeCalculator with calculateShape function
+const BodyshapeCalculator = {
+  ShoulderHips: null,
+  WaistHips: null,
+  BustWaist: null,
+  BustHips: null,
+  Shape: null,
+
+}
+
+// adjust measurements if the person has smaller curves than regression fit
+// use language that is sensitive and respectful small.. curvy...
+const Curves = {
+  Bust,
+  Butt,
+}
+
+// how often to send notifications and billing
+const Notifications = {
+  Subscription: {
+    Subscribed,
+    SubscriptionFrequency,
+    SubscriptionType,
+  },
+  Payments: {
+    StripeKey,
+    StripeID,
+  },
+  Contact: {
+    Email,
+    text,
+    socialmedia: [{
+      handle,
+      platform,
+    }]
+  },
+}
+
+// band size and cup size to adjust bust prediction or recommend bra type clothing categories
+const BraSize = {
+  BandSize,
+  BustSize
+}
+
+// Body Data
+const Body = {
+  Height,
+  HeightUnit,
+  Weight,
+  WeightUnit,
+  Bust, // around biggest part of bust
+  Waist, // biggest part of stomach
+  Hips, // biggest part around hips
+  Inseam, // from crotch to ankle
+  MeasurementUnit,
+}
+
+// Personal Data
+const UserMeta = {
+  // age range or age
+  Age,
+  // muscle definition, skin tightness,
+  ActivityLevel,
+  // country, province, state, city ()
+  Region,
+  // annual income or based on job
+  Income,
+  // non hispanic, hispanic, non arab, arab, [ east, west, north --> african, asian, european ]
+  Ethnicity,
+  // months pre and post pregnancy 
+  Maternity,
+  RelationshipStatus,
+  // level of schooling
+  Schooling,
+  // Student, Office, Labour, ...
+  Job,
+  //anorexic, skinny, thin, healthy, little overweight, overweight, fat, obese
+  WeightDescription,
+
+}
+
+// Sizes a user has bought from brands we have data for
+const UserBrandSizes = {
+  // brand we already found. must have a unique country and link
+  BrandID,
+  // store where brand can be shopped. store can have multiple brands
+  StoreID,
+  BrandName,
+  // upper body, lower body, full
+  Coverage,
+  // item types
+  ClothingCategory,
+  // Special Size, 
+  SpecialSizes,
+  // Last Purchased
+  PurchaseDate,
+  // Country
+  Country,
+  SizeName,
+  SizeID,
+}
+
+// Sizes a user has bought from brands we have not indexed
+const UserUnknownSizes = {
+  BrandLink,
+  BrandName,
+  ClothingCategory,
+  PurchaseDate,
+  Country,
+  Coverage,
+  SizeName,
+  SizeID,
+}
+
+// Liked Brands
+const PreferredBrands = {
+  BrandName,
+  BrandID,
+  StoreID,
+}
+
+// allow user to select multiple special sizes they shop from
+const SpecialSizes = {
+  Wide,
+  PlusSize: "Plus Size",
+  Junior,
+  Petite,
+  Curvy,
+  Tall,
+  Big,
+  Maternity,
+  Missy,
+  Girls,
+  Boys,
+  Babies,
+  Long,
+}
+
   
 // ----------------------------------------------------- USER PREDICTED/COMPUTED DATA ---------------------------------------------------
 
@@ -1143,3 +1161,609 @@ const UserProfile = {
     }
     
 }
+
+// ----------------------------------------------------- USER FEEDBACK DATA ---------------------------------------------------
+
+// garment fit rating / feedback
+const GarmentFit = {
+  VeryTight: "Very Tight",
+  Tight,
+  JustRight: "Great Fit",
+  Loose,
+  VeryLoose: "Very Loose",
+}
+
+// feedback on request 
+const RequestRating = {
+  Style,
+  ExpectationsMatch,
+  Fit,
+  Experience,
+  Favourite,
+  LeastFavourite,
+}
+
+// rate direct match for single item
+const MatchRating = {
+  Item,
+  Fit,
+  Look,
+}
+
+
+
+// -------------------------------  FUNCTIONS FOR USER PROFILES & SERVICIMNG -------------------------------------------
+
+UserProfileCreation = {
+  InputManager: () => {},
+  ContactMaker: () => {},
+  SubscriptionManager: () => {},
+  PaymentManager: () => {},
+  ShapeMaker: () => {},
+  SizeMaker: () => {},
+  MeasurementMaker: () => {},
+  FitPreferrences: () => {},
+  StylePreferrences: () => {},
+  LogisticsPreferences: () => {},
+  SpecialSizeMaker: () => {},
+  FitCombinations: () => {},
+}
+// ----------------------------------------------------- USER SIDE FUNCTIONS DATA ---------------------------------------------------
+
+// calculator for body shape using shape breakdown and bigger or smaller 
+
+
+/*
+  * Sh - Shoulder
+  * H  - Hip
+  * B  - Bust
+  * W  - Waist
+*/
+
+/* 
+
+
+Step 1
+
+sh == h -> 0
+sh > h -> 1
+sh < h - > 2
+
+
+Step 2
+
+w < h 
+w == h
+w > h
+
+Step 3
+
+b > w
+b == w
+b < w
+
+Step 4
+
+b == h
+b > h
+b < h
+
+*/
+
+function calculateShape() {
+  if (Bodyshape.ShoulderHips== 0) {
+    // B>H
+    if (Bodyshape.BustHips== 1) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+    }
+
+    // B=H
+    if (Bodyshape.BustHips== 0) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Rectangle;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Oval;
+            break;
+        }
+      }
+    }
+
+    // B<H
+    if (Bodyshape.BustHips== 2) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+    }
+  } else if (Bodyshape.ShoulderHips== 2) {
+    // B>H
+    if (Bodyshape.BustHips== 1) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Oval;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+    }
+
+    // B=H
+    if (Bodyshape.BustHips== 0) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+    }
+
+    // B<H
+    if (Bodyshape.BustHips== 2) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist == 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Triangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+  }
+  } else (Bodyshape.ShoulderHips == 1) {
+    // B>H
+    if (Bodyshape.BustHips== 1) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = InvertedTriangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = InvertedTriangle;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = InvertedTriangle;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = InvertedTriangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = InvertedTriangle;
+            break;
+        }
+      }
+    }
+
+    // B=H
+    if (Bodyshape.BustHips== 0) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = InvertedTriangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Rectangle;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Rectangle;
+            break;
+        }
+      }
+    }
+
+    // B<H
+    if (Bodyshape.BustHips== 2) {
+      // B>W
+      if (Bodyshape.BustWaist== 0) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = InvertedTriangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B=W
+      if (Bodyshape.BustWaist== 1) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = InvertedTriangle;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Rectangle;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Hourglass;
+            break;
+        }
+      }
+
+      // B<W
+      if (Bodyshape.BustWaist== 2) {
+        switch (Bodyshape.WaistHips) {
+            // W>H
+          case '2':
+            bodyshape = Oval;
+            break;
+            // W=H
+          case '1':
+            bodyshape = Oval;
+            break;
+            // W<H
+          case '0':
+            bodyshape = Triangle;
+            break;
+        }
+      }
+    }
+  }
+}
+
